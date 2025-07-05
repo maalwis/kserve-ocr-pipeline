@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ocr-model-service
+spec:
+  selector:
+    app: ocr-model
+  ports:
+    - port: 8080
+      targetPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ocr-model-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ocr-model
+  template:
+    metadata:
+      labels:
+        app: ocr-model
+    spec:
+      containers:
+        - name: ocr-model
+          image: maalwis/k8s-ocr-model:2.0
+          ports:
+            - containerPort: 8080
