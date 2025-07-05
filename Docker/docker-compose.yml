@@ -1,0 +1,19 @@
+services:
+  ocr-model-container:
+    image: ocr-model:1.0
+    ports:
+      - 8080:8080
+    networks:
+      - ocr-network
+
+  api-gateway-container:
+    image: api-gateway:1.0
+    ports:
+      - 8001:8001
+    networks:
+      - ocr-network
+
+networks:
+  ocr-network:
+
+
