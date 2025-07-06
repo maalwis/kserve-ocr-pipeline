@@ -1,0 +1,12 @@
+Installing {{ .Chart.Name }}!
+
+Your OCR model service is now available.
+
+To check status:
+  kubectl get svc {{ include "ocr-model.fullname" . }}
+
+If using NodePort on Minikube, you can run:
+  minikube service {{ include "ocr-model.fullname" . }}
+
+To upgrade:
+  helm upgrade {{ .Release.Name }} ./ocr-model

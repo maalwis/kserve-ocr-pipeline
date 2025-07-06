@@ -1,0 +1,8 @@
+Installing {{ .Chart.Name }}!
+
+API Gateway can be accessed via:
+
+  http://{{ .Release.Name }}-service:{{ .Values.service.port }}
+
+To upgrade:
+  $ helm upgrade {{ .Release.Name }} ./api-gateway

@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: maalwis/k8s-ocr-model
+  tag: "2.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080

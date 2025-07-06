@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: maalwis/k8s-api-gateway
+  tag: "2.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8001
+  targetPort: 8001
